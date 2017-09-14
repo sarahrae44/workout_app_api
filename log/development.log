@@ -293,3 +293,65 @@ Processing by ExercisesController#index as HTML
 Completed 200 OK in 13ms (Views: 9.3ms | ActiveRecord: 2.6ms)
 
 
+Started GET "/exercises" for 127.0.0.1 at 2017-09-14 13:47:08 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.4ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises"[0m
+Completed 200 OK in 14ms (Views: 8.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/bodies" for 127.0.0.1 at 2017-09-14 13:47:14 -0600
+Processing by BodiesController#index as HTML
+  [1m[36mBody Load (0.4ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies"[0m
+Completed 200 OK in 22ms (Views: 11.0ms | ActiveRecord: 9.7ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6320891172629656455)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateGroups (20170914195212)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (33.1ms)[0m  [1m[35mCREATE TABLE "groups" ("id" bigserial primary key, "body_id" bigint, "exercise_id" bigint, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b59e0a51f3"
+FOREIGN KEY ("body_id")
+  REFERENCES "bodies" ("id")
+, CONSTRAINT "fk_rails_483309c0b6"
+FOREIGN KEY ("exercise_id")
+  REFERENCES "exercises" ("id")
+)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_groups_on_body_id" ON "groups"  ("body_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX  "index_groups_on_exercise_id" ON "groups"  ("exercise_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170914195212"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(6320891172629656455)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/exercises" for 127.0.0.1 at 2017-09-14 13:57:49 -0600
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.5ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises"[0m
+Completed 200 OK in 18ms (Views: 10.8ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBody Load (0.3ms)[0m  [1m[34mSELECT  "bodies".* FROM "bodies" WHERE "bodies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT  "exercises".* FROM "exercises" WHERE "exercises"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (27.9ms)[0m  [1m[32mINSERT INTO "groups" ("body_id", "exercise_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body_id", 1], ["exercise_id", 1], ["name", "arms"], ["created_at", "2017-09-14 19:58:34.988317"], ["updated_at", "2017-09-14 19:58:34.988317"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBody Load (0.2ms)[0m  [1m[34mSELECT  "bodies".* FROM "bodies" WHERE "bodies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT  "exercises".* FROM "exercises" WHERE "exercises"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "groups" ("body_id", "exercise_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body_id", 1], ["exercise_id", 2], ["name", "arms"], ["created_at", "2017-09-14 19:59:39.056895"], ["updated_at", "2017-09-14 19:59:39.056895"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBody Load (0.4ms)[0m  [1m[34mSELECT  "bodies".* FROM "bodies" WHERE "bodies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExercise Load (0.4ms)[0m  [1m[34mSELECT  "exercises".* FROM "exercises" INNER JOIN "groups" ON "exercises"."id" = "groups"."exercise_id" WHERE "groups"."body_id" = $1 LIMIT $2[0m  [["body_id", 1], ["LIMIT", 11]]
+Started GET "/bodies" for 127.0.0.1 at 2017-09-14 14:00:34 -0600
+Processing by BodiesController#index as HTML
+  [1m[36mBody Load (0.3ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies"[0m
+Completed 200 OK in 10ms (Views: 5.4ms | ActiveRecord: 2.2ms)
+
+
+  [1m[36mExercise Load (0.4ms)[0m  [1m[34mSELECT  "exercises".* FROM "exercises" WHERE "exercises"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBody Load (0.4ms)[0m  [1m[34mSELECT  "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1 LIMIT $2[0m  [["exercise_id", 1], ["LIMIT", 11]]
+  [1m[36mBody Load (0.3ms)[0m  [1m[34mSELECT  "bodies".* FROM "bodies" WHERE "bodies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."body_id" = $1 LIMIT $2[0m  [["body_id", 1], ["LIMIT", 11]]
