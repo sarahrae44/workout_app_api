@@ -1073,3 +1073,45 @@ Processing by BodiesController#index as HTML
 Completed 200 OK in 90ms (Views: 0.1ms | ActiveRecord: 19.3ms)
 
 
+Started GET "/bodies" for 127.0.0.1 at 2017-09-14 18:59:27 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BodiesController#index as HTML
+  [1m[36mBody Load (0.5ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies"[0m
+  [1m[36mExercise Load (0.5ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" INNER JOIN "groups" ON "exercises"."id" = "groups"."exercise_id" WHERE "groups"."body_id" = $1[0m  [["body_id", 1]]
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" INNER JOIN "groups" ON "exercises"."id" = "groups"."exercise_id" WHERE "groups"."body_id" = $1[0m  [["body_id", 2]]
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" INNER JOIN "groups" ON "exercises"."id" = "groups"."exercise_id" WHERE "groups"."body_id" = $1[0m  [["body_id", 3]]
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" INNER JOIN "groups" ON "exercises"."id" = "groups"."exercise_id" WHERE "groups"."body_id" = $1[0m  [["body_id", 4]]
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" INNER JOIN "groups" ON "exercises"."id" = "groups"."exercise_id" WHERE "groups"."body_id" = $1[0m  [["body_id", 5]]
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" INNER JOIN "groups" ON "exercises"."id" = "groups"."exercise_id" WHERE "groups"."body_id" = $1[0m  [["body_id", 6]]
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" INNER JOIN "groups" ON "exercises"."id" = "groups"."exercise_id" WHERE "groups"."body_id" = $1[0m  [["body_id", 7]]
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" INNER JOIN "groups" ON "exercises"."id" = "groups"."exercise_id" WHERE "groups"."body_id" = $1[0m  [["body_id", 8]]
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" INNER JOIN "groups" ON "exercises"."id" = "groups"."exercise_id" WHERE "groups"."body_id" = $1[0m  [["body_id", 9]]
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" INNER JOIN "groups" ON "exercises"."id" = "groups"."exercise_id" WHERE "groups"."body_id" = $1[0m  [["body_id", 10]]
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" INNER JOIN "groups" ON "exercises"."id" = "groups"."exercise_id" WHERE "groups"."body_id" = $1[0m  [["body_id", 11]]
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" INNER JOIN "groups" ON "exercises"."id" = "groups"."exercise_id" WHERE "groups"."body_id" = $1[0m  [["body_id", 12]]
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" INNER JOIN "groups" ON "exercises"."id" = "groups"."exercise_id" WHERE "groups"."body_id" = $1[0m  [["body_id", 13]]
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" INNER JOIN "groups" ON "exercises"."id" = "groups"."exercise_id" WHERE "groups"."body_id" = $1[0m  [["body_id", 14]]
+Completed 200 OK in 54ms (Views: 0.1ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-14 18:59:36 -0600
+Processing by WelcomeController#index as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-14 19:03:00 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-14 19:03:04 -0600
+Processing by WelcomeController#index as HTML
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-14 19:03:52 -0600
+Processing by WelcomeController#index as HTML
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
