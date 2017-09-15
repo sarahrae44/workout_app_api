@@ -1114,7 +1114,6 @@ Started GET "/" for 127.0.0.1 at 2017-09-14 19:03:52 -0600
 Processing by WelcomeController#index as HTML
 Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
 
-
   [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6320891172629656455)[0m
   [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Migrating to CreateUsers (20170915011850)
@@ -1428,5 +1427,4 @@ Started GET "/users" for 127.0.0.1 at 2017-09-14 21:59:14 -0600
 Processing by UsersController#index as HTML
 Filter chain halted as :authenticate_token rendered or redirected
 Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
-
 
