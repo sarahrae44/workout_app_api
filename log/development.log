@@ -6988,3 +6988,90 @@ Processing by BodiesController#index as HTML
 Completed 200 OK in 36ms (Views: 0.1ms | ActiveRecord: 6.3ms)
 
 
+Started GET "/bodies/1" for 127.0.0.1 at 2017-09-17 10:59:07 -0600
+Processing by BodiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBody Load (0.3ms)[0m  [1m[34mSELECT  "bodies".* FROM "bodies" WHERE "bodies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Body Load (0.0ms)[0m  [1m[34mSELECT  "bodies".* FROM "bodies" WHERE "bodies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExercise Load (0.4ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" INNER JOIN "groups" ON "exercises"."id" = "groups"."exercise_id" WHERE "groups"."body_id" = $1[0m  [["body_id", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/exercises/1" for 127.0.0.1 at 2017-09-17 10:59:08 -0600
+Processing by ExercisesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mExercise Load (5.9ms)[0m  [1m[34mSELECT  "exercises".* FROM "exercises" WHERE "exercises"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBody Load (0.4ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 1]]
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2017-09-17 10:59:12 -0600
+Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises"[0m
+  [1m[36mBody Load (0.1ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 1]]
+  [1m[36mBody Load (0.1ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 2]]
+  [1m[36mBody Load (0.1ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 3]]
+  [1m[36mBody Load (0.1ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 4]]
+  [1m[36mBody Load (0.1ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 5]]
+  [1m[36mBody Load (0.1ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 6]]
+  [1m[36mBody Load (0.2ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 7]]
+  [1m[36mBody Load (0.2ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 8]]
+  [1m[36mBody Load (0.2ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 9]]
+  [1m[36mBody Load (0.2ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 10]]
+  [1m[36mBody Load (0.2ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 11]]
+  [1m[36mBody Load (0.2ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 12]]
+  [1m[36mBody Load (0.2ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 13]]
+  [1m[36mBody Load (0.3ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 14]]
+Completed 200 OK in 21ms (Views: 0.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2017-09-17 11:07:47 -0600
+Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises"[0m
+  [1m[36mBody Load (0.3ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 1]]
+  [1m[36mBody Load (0.4ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 2]]
+  [1m[36mBody Load (0.4ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 3]]
+  [1m[36mBody Load (0.4ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 4]]
+  [1m[36mBody Load (0.2ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 5]]
+  [1m[36mBody Load (0.1ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 6]]
+  [1m[36mBody Load (0.1ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 7]]
+  [1m[36mBody Load (0.1ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 8]]
+  [1m[36mBody Load (0.2ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 9]]
+  [1m[36mBody Load (0.2ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 10]]
+  [1m[36mBody Load (0.1ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 11]]
+  [1m[36mBody Load (0.1ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 12]]
+  [1m[36mBody Load (0.1ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 13]]
+  [1m[36mBody Load (0.1ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 14]]
+Completed 200 OK in 48ms (Views: 0.1ms | ActiveRecord: 8.7ms)
+
+
+Started POST "/exercises" for 127.0.0.1 at 2017-09-17 11:08:51 -0600
+Processing by ExercisesController#create as HTML
+  Parameters: {"exercise"=>{"name"=>"ExerciseA", "img"=>"exerciseA.png", "desc"=>"exerciseA desc", "duration"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "exercises" ("name", "img", "desc", "created_at", "updated_at", "duration") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "ExerciseA"], ["img", "exerciseA.png"], ["desc", "exerciseA desc"], ["created_at", "2017-09-17 17:08:51.796006"], ["updated_at", "2017-09-17 17:08:51.796006"], ["duration", 1]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 12ms (Views: 1.0ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2017-09-17 11:09:01 -0600
+Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.3ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises"[0m
+  [1m[36mBody Load (0.3ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 1]]
+  [1m[36mBody Load (0.2ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 2]]
+  [1m[36mBody Load (0.3ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 3]]
+  [1m[36mBody Load (0.3ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 4]]
+  [1m[36mBody Load (0.3ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 5]]
+  [1m[36mBody Load (0.3ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 6]]
+  [1m[36mBody Load (0.2ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 7]]
+  [1m[36mBody Load (0.2ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 8]]
+  [1m[36mBody Load (0.2ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 9]]
+  [1m[36mBody Load (0.1ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 10]]
+  [1m[36mBody Load (0.1ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 11]]
+  [1m[36mBody Load (0.1ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 12]]
+  [1m[36mBody Load (0.1ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 13]]
+  [1m[36mBody Load (0.1ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 14]]
+  [1m[36mBody Load (0.1ms)[0m  [1m[34mSELECT "bodies".* FROM "bodies" INNER JOIN "groups" ON "bodies"."id" = "groups"."body_id" WHERE "groups"."exercise_id" = $1[0m  [["exercise_id", 15]]
+Completed 200 OK in 25ms (Views: 0.1ms | ActiveRecord: 3.1ms)
+
+
