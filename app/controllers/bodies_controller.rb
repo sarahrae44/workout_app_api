@@ -37,6 +37,7 @@ class BodiesController < ApplicationController
 
   # DELETE /bodies/1
   def destroy
+    @body = Body.find(params[:id])
     @body.destroy
   end
 
