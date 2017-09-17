@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :groups
-  resources :bodies, only: [:index, :show, :update, :destroy, :create]
+  resources :bodies
   # resources :movements
   # resources :bodyparts
   resources :exercises, only: [:index, :show, :update, :destroy, :create]
