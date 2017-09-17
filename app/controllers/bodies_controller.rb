@@ -10,6 +10,7 @@ class BodiesController < ApplicationController
 
   # GET /bodies/1
   def show
+    @boby = Body.find(params[:id])
     render json: @body.to_json(include: :exercises)
   end
 
@@ -26,6 +27,7 @@ class BodiesController < ApplicationController
 
   # PATCH/PUT /bodies/1
   def update
+    @body = Body.find(params[:id])
     if @body.update(body_params)
       render json: @body
     else
