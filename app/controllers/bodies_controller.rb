@@ -1,5 +1,5 @@
 class BodiesController < ApplicationController
-  before_action :set_body, only: [:show, :update, :destroy]
+  before_action :set_body, only: [:show, :update, :destroy, :edit]
 
   # GET /bodies
   def index
@@ -10,6 +10,7 @@ class BodiesController < ApplicationController
 
   # GET /bodies/1
   def show
+    # @boby = Body.find(params[:id])
     render json: @body.to_json(include: :exercises)
   end
 
@@ -26,6 +27,12 @@ class BodiesController < ApplicationController
 
   # PATCH/PUT /bodies/1
   def update
+    # body = Body.find(params[:id])
+    #
+    # body.update(body_params)
+    #
+    # render json: {status: 200, body: body}
+    @body = Body.find(params[:id])
     if @body.update(body_params)
       render json: @body
     else
@@ -35,6 +42,7 @@ class BodiesController < ApplicationController
 
   # DELETE /bodies/1
   def destroy
+    @body = Body.find(params[:id])
     @body.destroy
   end
 
@@ -46,6 +54,6 @@ class BodiesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def body_params
-      params.require(:body).permit(:name, :img)
+      params.require(:body).permit(:musclename, :img)
     end
 end
