@@ -46,7 +46,8 @@ class GroupsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def group_params
-      params.require(:group).permit(:body_id, :exercise_id, :groupname, { bodies_attributes: [:id, :musclename, :img ]}, exercises_attributes: [:id]
+      params.require(:group).permit(:body_id, :exercise_id, :groupname
+      # , { bodies_attributes: [:id, :musclename, :img ]}, exercises_attributes: [:id]
       )
     end
 end
