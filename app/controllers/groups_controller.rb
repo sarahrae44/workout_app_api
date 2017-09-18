@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:show, :update, :destroy]
+  # before_action :set_group, only: [:show, :update, :destroy, :create]
 
   # GET /groups
   def index
@@ -18,7 +18,7 @@ class GroupsController < ApplicationController
     @group = Group.new(group_params)
 
     if @group.save
-      render json: @group, status: :created, location: @group
+      render json: @group.to_json, status: :created, location: @group
     else
       render json: @group.errors, status: :unprocessable_entity
     end
@@ -46,6 +46,7 @@ class GroupsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def group_params
-      params.require(:group).permit(:body_id, :exercise_id, :name)
+      params.require(:group).permit(:body_id, :exercise_id, :groupname, { bodies_attributes: [:id, :musclename, :img ]}, exercises_attributes: [:id]
+      )
     end
 end
