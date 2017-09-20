@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170918131541) do
+ActiveRecord::Schema.define(version: 20170919221448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,8 +37,15 @@ ActiveRecord::Schema.define(version: 20170918131541) do
     t.string "groupname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "muscle_group_id"
     t.index ["body_id"], name: "index_groups_on_body_id"
     t.index ["exercise_id"], name: "index_groups_on_exercise_id"
+  end
+
+  create_table "muscle_groups", force: :cascade do |t|
+    t.string "muscleGroupName"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

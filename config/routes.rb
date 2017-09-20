@@ -7,7 +7,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :groups
+  # resources :muscle_groups
+  resources :groups 
   resources :bodies
   # resources :movements
   # resources :bodyparts
