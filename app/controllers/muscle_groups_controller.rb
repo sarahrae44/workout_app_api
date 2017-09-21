@@ -16,6 +16,9 @@ class MuscleGroupsController < ApplicationController
   # POST /muscle_groups
   def create
     @muscle_group = MuscleGroup.new(muscle_group_params)
+    # @muscle_group = MuscleGroup.new(params[:group][:exercises_attributes]).values.each do |exercise|
+    #   exercise[:exercisename]
+    # end if params[:group] and params[:group][:exercises_attributes]
 
     if @muscle_group.save
       render json: @muscle_group, status: :created, location: @muscle_group
