@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20170919221448) do
-=======
-ActiveRecord::Schema.define(version: 20170921185802) do
->>>>>>> styles
+ActiveRecord::Schema.define(version: 20170922141849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,8 +48,16 @@ ActiveRecord::Schema.define(version: 20170921185802) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
-=======
+  create_table "user_exes", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "exercise_id"
+    t.integer "userexid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exercise_id"], name: "index_user_exes_on_exercise_id"
+    t.index ["user_id"], name: "index_user_exes_on_user_id"
+  end
+
   create_table "userexercises", force: :cascade do |t|
     t.string "user"
     t.string "references"
@@ -75,7 +79,6 @@ ActiveRecord::Schema.define(version: 20170921185802) do
     t.index ["user_id"], name: "index_usergroups_on_user_id"
   end
 
->>>>>>> styles
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
@@ -85,6 +88,7 @@ ActiveRecord::Schema.define(version: 20170921185802) do
     t.string "savedexercisesmuscle"
     t.string "savedexercisesgroup"
     t.string "savedexercisesdesc"
+    t.integer "exercise_id"
   end
 
   create_table "usersaves", force: :cascade do |t|
@@ -99,6 +103,8 @@ ActiveRecord::Schema.define(version: 20170921185802) do
 
   add_foreign_key "groups", "bodies"
   add_foreign_key "groups", "exercises"
+  add_foreign_key "user_exes", "exercises"
+  add_foreign_key "user_exes", "users"
   add_foreign_key "usergroups", "groups"
   add_foreign_key "usersaves", "groups"
   add_foreign_key "usersaves", "users"
