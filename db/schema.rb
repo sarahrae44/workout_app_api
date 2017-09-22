@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170919221448) do
+=======
+ActiveRecord::Schema.define(version: 20170921185802) do
+>>>>>>> styles
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,13 +52,54 @@ ActiveRecord::Schema.define(version: 20170919221448) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
+=======
+  create_table "userexercises", force: :cascade do |t|
+    t.string "user"
+    t.string "references"
+    t.string "group"
+    t.string "usergroupid"
+    t.string "integer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "usergroups", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "group_id"
+    t.string "usergroupid"
+    t.string "integer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_usergroups_on_group_id"
+    t.index ["user_id"], name: "index_usergroups_on_user_id"
+  end
+
+>>>>>>> styles
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "savedexercisesname"
+    t.string "savedexercisesmuscle"
+    t.string "savedexercisesgroup"
+    t.string "savedexercisesdesc"
+  end
+
+  create_table "usersaves", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "group_id"
+    t.integer "usergroupid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_usersaves_on_group_id"
+    t.index ["user_id"], name: "index_usersaves_on_user_id"
   end
 
   add_foreign_key "groups", "bodies"
   add_foreign_key "groups", "exercises"
+  add_foreign_key "usergroups", "groups"
+  add_foreign_key "usersaves", "groups"
+  add_foreign_key "usersaves", "users"
 end
