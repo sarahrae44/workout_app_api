@@ -19,12 +19,12 @@ class UsersController < ApplicationController
   def index
     @users = User.all
 
-    render json: @users.to_json(include: :groups)
+    render json: @users.to_json(include: :exercises)
   end
 
   # GET /users/1
   def show
-    render json: @user.to_json(include: :groups)
+    render json: @user.to_json(include: :exercises)
     # render json: get_current_user
   end
 
@@ -80,6 +80,6 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:username, :password, :password_digest)
+      params.require(:user).permit(:username, :password, :password_digest, :exercise_id)
     end
 end

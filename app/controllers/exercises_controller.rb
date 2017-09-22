@@ -5,13 +5,13 @@ class ExercisesController < ApplicationController
   def index
     @exercises = Exercise.all
 
-    render json: @exercises.to_json(include: :bodies)
+    render json: @exercises.to_json(include: [:bodies, :users])
   end
 
   # GET /exercises/1
   def show
     @exercise = Exercise.find(params[:id])
-    render json: @exercise.to_json(include: :bodies)
+    render json: @exercise.to_json(include: [:bodies, :users])
   end
 
   # POST /exercises
