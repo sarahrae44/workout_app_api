@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  exercise: one
+  userexid: 1
+
+two:
+  user: two
+  exercise: two
+  userexid: 1
