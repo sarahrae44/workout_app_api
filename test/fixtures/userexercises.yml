@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: MyString
+  references: MyString
+  group: MyString
+  references: MyString
+  usergroupid: MyString
+  integer: MyString
+
+two:
+  user: MyString
+  references: MyString
+  group: MyString
+  references: MyString
+  usergroupid: MyString
+  integer: MyString
