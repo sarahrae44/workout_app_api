@@ -5,12 +5,12 @@ class GroupsController < ApplicationController
   def index
     @groups = Group.all
 
-    render json: @groups.to_json(include: [:body, :exercise])
+    render json: @groups.to_json(include: [:body, :exercise, :users])
   end
 
   # GET /groups/1
   def show
-    render json: @group.to_json(include: [:body, :exercise])
+    render json: @group.to_json(include: [:body, :exercise, :users])
   end
 
   # POST /groups

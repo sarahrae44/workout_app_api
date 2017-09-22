@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  resources :usersaves
+  resources :usergroups
+  resources :userexercises
   root 'welcome#index'
 
   resources :users do
     collection do
       post '/login', to: 'users#login'
+      post ':id/exercises', to: 'users#exercises'
     end
   end
 
