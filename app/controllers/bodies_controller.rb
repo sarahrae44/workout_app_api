@@ -19,7 +19,7 @@ class BodiesController < ApplicationController
     @body = Body.new(body_params)
 
     if @body.save
-      render json: @body, status: :created, location: @body
+      render json: @body.to_json, status: :created, location: @body
     else
       render json: @body.errors, status: :unprocessable_entity
     end
@@ -42,7 +42,7 @@ class BodiesController < ApplicationController
 
   # DELETE /bodies/1
   def destroy
-    @body = Body.find(params[:id])
+    # @body = Body.find(params[:id])
     @body.destroy
   end
 
