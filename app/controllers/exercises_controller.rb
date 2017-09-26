@@ -19,7 +19,7 @@ class ExercisesController < ApplicationController
     @exercise = Exercise.new(exercise_params)
 
     if @exercise.save
-      render json: @exercise, status: :created, location: @exercise
+      render json: @exercise.to_json, status: :created, location: @exercise
     else
       render json: @exercise.errors, status: :unprocessable_entity
     end

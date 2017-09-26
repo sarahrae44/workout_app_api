@@ -18,7 +18,7 @@ class MusclesController < ApplicationController
     @muscle = Muscle.new(muscle_params)
 
     if @muscle.save
-      render json: @muscle, status: :created, location: @muscle
+      render json: @muscle.to_json, status: :created, location: @muscle
     else
       render json: @muscle.errors, status: :unprocessable_entity
     end
